@@ -1,7 +1,7 @@
 (package-initialize)
 
 ;; CS61B-software path.
-(setq SOFTWARE "~/eecs/cs61b/software/adm/cs61b.el")
+(setq SOFTWARE "~/.emacs.d/cs61b.el")
 (load-file SOFTWARE)
 
 (add-to-list 'load-path "~/.emacs.d/plugins")
