@@ -5,7 +5,7 @@
 
 (setq load-path
       (append load-path
-              (list (expand-file-name "~/cs61b-software/lib/emacs/lisp"))))
+              (list (expand-file-name "~/.emacs.d/plugins"))))
 (require 'gjdb)
 (require 'cc-mode)
 (require 'compile)
