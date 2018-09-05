@@ -30,7 +30,8 @@
 
 ;; ExuberantCTags path.
 (setq path-to-ctags
-      (shell-command-to-string "which ctags"))
+      (substring
+       (shell-command-to-string "which ctags") 0 -1))
 
 ;; Function for creating ctags in Emacs.
 (defun create-tags (dir-name)
