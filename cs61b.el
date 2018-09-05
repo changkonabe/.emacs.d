@@ -16,7 +16,7 @@
 (global-set-key "\eW" 'kill-region)
 (global-set-key "\eq" 'query-replace)
 (global-set-key "\eQ" 'query-replace-regexp)
-(global-set-key "\^x\^e" 'compile)
+(global-set-key "\^xm" 'compile) ; replace compose-mail with compile
 
 ; Undo some dangerous or annoying keys.
 

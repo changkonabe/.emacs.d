@@ -29,7 +29,8 @@
       c-basic-offset 4)
 
 ;; ExuberantCTags path.
-(setq path-to-ctags "/usr/local/bin/ctags")
+(setq path-to-ctags
+      (shell-command-to-string "which ctags"))
 
 ;; Function for creating ctags in Emacs.
 (defun create-tags (dir-name)
