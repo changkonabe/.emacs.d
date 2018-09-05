@@ -21,9 +21,9 @@
 ; Undo some dangerous or annoying keys.
 
 (global-unset-key "\^z")
-(global-unset-key "\^xnn")
-(global-unset-key "\^x\^l")
-(global-unset-key "\^x\^u")
+;; (global-unset-key "\^xnn")  narrow-to-region 
+;; (global-unset-key "\^x\^l") downcase-region
+;; (global-unset-key "\^x\^u") upcase-region
 (global-unset-key "\^x\^v")
 
 ; Set up Java formatting as in lab: 4 space indentation quantum, no tabs 
