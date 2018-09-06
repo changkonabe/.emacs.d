@@ -28,6 +28,8 @@
 (setq c-default-style "stroustrup"
       c-basic-offset 4)
 
+(setq tags-file-name "tags")
+
 ;; ExuberantCTags path.
 (setq path-to-ctags
       (substring
