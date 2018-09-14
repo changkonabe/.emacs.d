@@ -25,10 +25,10 @@
 (put 'narrow-to-region 'disabled nil)
 
 ;; Initialization stuff.
-(setq c-default-style "stroustrup"
-      c-basic-offset 4)
+(setq c-default-style "gnu"
+      c-basic-offset 2)
 
-(setq tags-file-name "tags")
+;; (setq tags-file-name "tags")
 
 ;; ExuberantCTags path.
 (setq path-to-ctags
