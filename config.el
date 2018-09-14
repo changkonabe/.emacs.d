@@ -28,8 +28,6 @@
 (setq c-default-style "gnu"
       c-basic-offset 2)
 
-;; (setq tags-file-name "tags")
-
 ;; ExuberantCTags path.
 (setq path-to-ctags
       (substring
