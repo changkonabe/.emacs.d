@@ -25,8 +25,7 @@
 (put 'narrow-to-region 'disabled nil)
 
 ;; Initialization stuff.
-(setq c-default-style "gnu"
-      c-basic-offset 2)
+(setq c-default-style "gnu")
 
 ;; ExuberantCTags path.
 (setq path-to-ctags
