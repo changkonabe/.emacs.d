@@ -28,13 +28,13 @@
 (setq c-default-style "gnu")
 
 ;; ExuberantCTags path.
-(setq path-to-ctags
+(setq path-to-etags
       (substring
-       (shell-command-to-string "which ctags") 0 -1))
+       (shell-command-to-string "which etags") 0 -1))
 
 ;; Function for creating ctags in Emacs.
 (defun create-tags (dir-name)
   "Create tags file."
   (interactive "DDirectory: ")
   (shell-command
-   (format "%s -f TAGS -e -R %s" path-to-ctags (directory-file-name dir-name))))
+   (format "%s -R %s" path-to-etags (directory-file-name dir-name))))
