@@ -24,9 +24,6 @@
                           (other-window -1)))
 (put 'narrow-to-region 'disabled nil)
 
-;; Initialization stuff.
-(setq c-default-style "gnu")
-
 ;; ExuberantCTags path.
 (setq path-to-etags
       (substring

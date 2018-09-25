@@ -28,7 +28,7 @@
 
 ; Set up Java formatting as in lab: 4 space indentation quantum, no tabs 
 ; inserted for indentation, indent @ annotations properly.
-(setq c-basic-offset 4)
+;(setq c-basic-offset 4)
 (setq-default indent-tabs-mode nil)
 (load "java-mode-indent-annotations")
 
