@@ -23,6 +23,7 @@
                           (interactive)
                           (other-window -1)))
 (put 'narrow-to-region 'disabled nil)
+(set-variable 'column-number-mode t)
 
 ;; ExuberantCTags path.
 (setq path-to-etags
