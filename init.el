@@ -43,6 +43,10 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(column-number-mode t)
+ '(custom-safe-themes
+   (quote
+    ("725a0ac226fc6a7372074c8924c18394448bb011916c05a87518ad4563738668" default)))
+ '(gotham-tty-256-colors t)
  '(package-selected-packages
    (quote
     (web-mode go-mode gotham-theme golint fireplace abyss-theme))))
