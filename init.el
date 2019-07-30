@@ -23,6 +23,7 @@
 (global-set-key "\C-xp" (lambda () 
                           (interactive)
                           (other-window -1)))
+(global-set-key "\M-;" 'comment-dwim-2)
 (put 'narrow-to-region 'disabled nil)
 
 ;; ExuberantCTags path.
@@ -49,7 +50,7 @@
  '(gotham-tty-256-colors t)
  '(package-selected-packages
    (quote
-    (web-mode go-mode gotham-theme golint fireplace abyss-theme))))
+    (comment-dwim-2 poker gnugo chess web-mode go-mode gotham-theme golint fireplace abyss-theme))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
