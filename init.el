@@ -1,29 +1,29 @@
 (package-initialize)
 
+;; load emacs 24's package system. Add MELPA repository.
+(when (>= emacs-major-version 24)
+  (require 'package)
+  (add-to-list
+   'package-archives
+   ;; '("melpa" . "http://stable.melpa.org/packages/") ; many packages won't show if using stable
+   '("melpa" . "http://melpa.milkbox.net/packages/")
+   t))
+
 ;; CS61B-software path.
 (setq SOFTWARE "~/.emacs.d/cs61b.el")
 (load-file SOFTWARE)
 
 (add-to-list 'load-path "~/.emacs.d/plugins")
-(require 'web-mode)
-(add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.[agj]sp\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
 
 (require 'flex-mode)
 (add-to-list 'auto-mode-alist '("\\.l\\'" . flex-mode))
 (put 'downcase-region 'disabled nil)
 
-;; Custom key bindings
+;; Custom key bindings and settings
 (global-set-key "\C-xp" (lambda () 
                           (interactive)
                           (other-window -1)))
 (put 'narrow-to-region 'disabled nil)
-(set-variable 'column-number-mode t)
 
 ;; ExuberantCTags path.
 (setq path-to-etags
@@ -36,3 +36,19 @@
   (interactive "DDirectory: ")
   (shell-command
    (format "%s -R %s" path-to-etags (directory-file-name dir-name))))
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(column-number-mode t)
+ '(package-selected-packages
+   (quote
+    (web-mode go-mode gotham-theme golint fireplace abyss-theme))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
