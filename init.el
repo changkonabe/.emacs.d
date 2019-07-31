@@ -15,29 +15,10 @@
 
 (add-to-list 'load-path "~/.emacs.d/plugins")
 
-;; Custom key bindings and settings
-(global-set-key "\C-xp" (lambda () 
-                          (interactive)
-                          (other-window -1)))
-(global-set-key "\M-;" 'comment-dwim-2)
-(put 'narrow-to-region 'disabled nil)
-(require 'flex-mode)
-(add-to-list 'auto-mode-alist '("\\.l\\'" . flex-mode))
-(put 'downcase-region 'disabled nil)
-(global-auto-complete-mode)
-(load-theme 'cherry-blossom t) 
-
 ;; ExuberantCTags path.
 (setq path-to-etags
       (substring
        (shell-command-to-string "which etags") 0 -1))
-
-;; Function for creating ctags in Emacs.
-(defun create-tags (dir-name)
-  "Create tags file."
-  (interactive "DDirectory: ")
-  (shell-command
-   (format "%s -R %s" path-to-etags (directory-file-name dir-name))))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -49,7 +30,10 @@
  '(column-number-mode t)
  '(custom-safe-themes
    (quote
-    ("04589c18c2087cd6f12c01807eed0bdaa63983787025c209b89c779c61c3a4c4" "e9740103f6ae2cbc97fef889b85b1c51b4d4a2d95c2b398b57a1842d14d96304" "725a0ac226fc6a7372074c8924c18394448bb011916c05a87518ad4563738668" default)))
+    ("04589c18c2087cd6f12c01807eed0bdaa63983787025c209b89c779c61c3a4c4"
+     "e9740103f6ae2cbc97fef889b85b1c51b4d4a2d95c2b398b57a1842d14d96304"
+     "725a0ac226fc6a7372074c8924c18394448bb011916c05a87518ad4563738668"
+     default)))
  '(fci-rule-color "#4c406d")
  '(gotham-tty-256-colors t)
  '(nrepl-message-colors
@@ -86,3 +70,15 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+;; Custom key bindings and settings
+(global-set-key "\C-xp" (lambda ()
+                          (interactive)
+                          (other-window -1)))
+(global-set-key "\M-;" 'comment-dwim-2)
+(put 'narrow-to-region 'disabled nil)
+(require 'flex-mode)
+(add-to-list 'auto-mode-alist '("\\.l\\'" . flex-mode))
+(put 'downcase-region 'disabled nil)
+(global-auto-complete-mode)
+(load-theme 'cherry-blossom t)
