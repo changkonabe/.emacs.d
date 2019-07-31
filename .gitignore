@@ -5,5 +5,5 @@ auto-save-list
 games
 tutorial
 eshell
-elpa/*.txt
+elpa
 *.dat
