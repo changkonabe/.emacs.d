@@ -69,9 +69,6 @@
  )
 
 ;; Custom key bindings and settings
-(global-set-key "\C-xp" (lambda ()
-                          (interactive)
-                          (other-window -1)))
 (global-set-key (kbd "M-o") 'ace-window)
 (global-set-key "\M-;" 'comment-dwim-2)
 (put 'narrow-to-region 'disabled nil)
