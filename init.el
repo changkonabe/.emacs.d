@@ -1,5 +1,9 @@
 (package-initialize)
 
+;; NOTE when configuring on a new machine must manually execute
+;; (package-refresh-contents)
+;; (package-install-selected-packages)
+
 ;; load emacs 24's package system. Add MELPA repository.
 (when (>= emacs-major-version 24)
   (require 'package)
@@ -67,7 +71,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
-(package-install-selected-packages)
+
 ;; Custom key bindings and settings
 (global-set-key (kbd "M-o") 'ace-window)
 (global-set-key "\M-;" 'comment-dwim-2)
