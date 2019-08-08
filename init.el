@@ -30,7 +30,7 @@
  '(column-number-mode t)
  '(custom-safe-themes
    (quote
-    ("04589c18c2087cd6f12c01807eed0bdaa63983787025c209b89c779c61c3a4c4" "e9740103f6ae2cbc97fef889b85b1c51b4d4a2d95c2b398b57a1842d14d96304" "725a0ac226fc6a7372074c8924c18394448bb011916c05a87518ad4563738668" default)))
+    ("dbade2e946597b9cda3e61978b5fcc14fa3afa2d3c4391d477bdaeff8f5638c5" "801a567c87755fe65d0484cb2bded31a4c5bb24fd1fe0ed11e6c02254017acb2" "04589c18c2087cd6f12c01807eed0bdaa63983787025c209b89c779c61c3a4c4" "e9740103f6ae2cbc97fef889b85b1c51b4d4a2d95c2b398b57a1842d14d96304" "725a0ac226fc6a7372074c8924c18394448bb011916c05a87518ad4563738668" default)))
  '(fci-rule-color "#4c406d")
  '(gotham-tty-256-colors t)
  '(nrepl-message-colors
@@ -67,7 +67,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
-
+(package-install-selected-packages)
 ;; Custom key bindings and settings
 (global-set-key (kbd "M-o") 'ace-window)
 (global-set-key "\M-;" 'comment-dwim-2)
