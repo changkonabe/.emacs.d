@@ -42,7 +42,7 @@
     ("#ee11dd" "#8584ae" "#b4f5fe" "#4c406d" "#ffe000" "#ffa500" "#ffa500" "#DC8CC3")))
  '(package-selected-packages
    (quote
-    (ace-window zone-rainbow zone-sl roguel-ike cherry-blossom-theme ac-etags auto-complete comment-dwim-2 web-mode go-mode gotham-theme golint fireplace)))
+    (ace-window zone-sl cherry-blossom-theme ac-etags auto-complete comment-dwim-2 web-mode go-mode gotham-theme golint fireplace)))
  '(vc-annotate-background "#0bafed")
  '(vc-annotate-color-map
    (quote
@@ -75,6 +75,11 @@
 ;; Custom key bindings and settings
 (global-set-key (kbd "M-o") 'ace-window)
 (global-set-key "\M-;" 'comment-dwim-2)
+(global-set-key "\eg" 'goto-line)
+(global-set-key "\eq" 'query-replace)
+(global-set-key "\eQ" 'query-replace-regexp)
+(global-set-key "\^xm" 'compile) ; replace compose-mail with compile
+
 (put 'narrow-to-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
 (put 'dired-find-alternate-file 'disabled nil)

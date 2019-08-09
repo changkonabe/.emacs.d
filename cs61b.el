@@ -11,12 +11,7 @@
 (require 'compile)
 
 ; Key definitions from lab
-
-(global-set-key "\eg" 'goto-line)
 (global-set-key "\eW" 'kill-region)
-(global-set-key "\eq" 'query-replace)
-(global-set-key "\eQ" 'query-replace-regexp)
-(global-set-key "\^xm" 'compile) ; replace compose-mail with compile
 
 ; Undo some dangerous or annoying keys.
 
@@ -24,7 +19,7 @@
 ;; (global-unset-key "\^xnn")  narrow-to-region 
 ;; (global-unset-key "\^x\^l") downcase-region
 ;; (global-unset-key "\^x\^u") upcase-region
-(global-unset-key "\^x\^v")
+;; (global-unset-key "\^x\^v")
 
 ; Set up Java formatting as in lab: 4 space indentation quantum, no tabs 
 ; inserted for indentation, indent @ annotations properly.
