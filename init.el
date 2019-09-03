@@ -42,7 +42,7 @@
     ("#ee11dd" "#8584ae" "#b4f5fe" "#4c406d" "#ffe000" "#ffa500" "#ffa500" "#DC8CC3")))
  '(package-selected-packages
    (quote
-    (ace-window zone-sl cherry-blossom-theme ac-etags auto-complete comment-dwim-2 web-mode go-mode gotham-theme golint fireplace)))
+    (ace-jump-mode tramp ace-window zone-sl cherry-blossom-theme ac-etags auto-complete comment-dwim-2 web-mode go-mode gotham-theme golint fireplace)))
  '(vc-annotate-background "#0bafed")
  '(vc-annotate-color-map
    (quote
@@ -72,9 +72,13 @@
  ;; If there is more than one, they won't work right.
  )
 
-;; Custom key bindings and settings
+;; Settings for installed packages.
 (global-set-key (kbd "M-o") 'ace-window)
 (global-set-key "\M-;" 'comment-dwim-2)
+(global-set-key (kbd "C-c SPC") 'ace-jump-mode)
+(global-set-key (kbd "C-x SPC") 'ace-jump-mode-pop-mark)
+
+;; Custom key bindings and settings
 (global-set-key "\eg" 'goto-line)
 (global-set-key "\eq" 'query-replace)
 (global-set-key "\eQ" 'query-replace-regexp)
@@ -87,4 +91,4 @@
 (load-theme 'cherry-blossom t)
 (show-paren-mode)
 (require 'zone)
-(zone-when-idle 300)
+;; (zone-when-idle 600)
