@@ -42,7 +42,7 @@
     ("#ee11dd" "#8584ae" "#b4f5fe" "#4c406d" "#ffe000" "#ffa500" "#ffa500" "#DC8CC3")))
  '(package-selected-packages
    (quote
-    (ace-jump-mode tramp ace-window zone-sl cherry-blossom-theme ac-etags auto-complete comment-dwim-2 web-mode go-mode gotham-theme golint fireplace)))
+    (chess ace-jump-mode tramp ace-window zone-sl cherry-blossom-theme ac-etags auto-complete comment-dwim-2 web-mode go-mode gotham-theme golint fireplace)))
  '(vc-annotate-background "#0bafed")
  '(vc-annotate-color-map
    (quote
@@ -83,6 +83,7 @@
 (global-set-key "\eq" 'query-replace)
 (global-set-key "\eQ" 'query-replace-regexp)
 (global-set-key "\^xm" 'compile) ; replace compose-mail with compile
+(delete-selection-mode)
 
 (put 'narrow-to-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
