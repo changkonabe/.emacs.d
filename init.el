@@ -42,7 +42,7 @@
     ("#ee11dd" "#8584ae" "#b4f5fe" "#4c406d" "#ffe000" "#ffa500" "#ffa500" "#DC8CC3")))
  '(package-selected-packages
    (quote
-    (chess ace-jump-mode tramp ace-window zone-sl cherry-blossom-theme ac-etags auto-complete comment-dwim-2 web-mode go-mode gotham-theme golint fireplace)))
+    (magit chess ace-jump-mode ace-window zone-sl cherry-blossom-theme ac-etags auto-complete comment-dwim-2 web-mode go-mode gotham-theme golint fireplace)))
  '(vc-annotate-background "#0bafed")
  '(vc-annotate-color-map
    (quote
@@ -77,6 +77,7 @@
 (global-set-key "\M-;" 'comment-dwim-2)
 (global-set-key (kbd "C-c SPC") 'ace-jump-mode)
 (global-set-key (kbd "C-x SPC") 'ace-jump-mode-pop-mark)
+(global-set-key (kbd "C-x g") 'magit-status)
 
 ;; Custom key bindings and settings
 (global-set-key "\eg" 'goto-line)
