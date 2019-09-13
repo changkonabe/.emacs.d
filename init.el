@@ -41,12 +41,13 @@
     ("dbade2e946597b9cda3e61978b5fcc14fa3afa2d3c4391d477bdaeff8f5638c5" "801a567c87755fe65d0484cb2bded31a4c5bb24fd1fe0ed11e6c02254017acb2" "04589c18c2087cd6f12c01807eed0bdaa63983787025c209b89c779c61c3a4c4" "e9740103f6ae2cbc97fef889b85b1c51b4d4a2d95c2b398b57a1842d14d96304" "725a0ac226fc6a7372074c8924c18394448bb011916c05a87518ad4563738668" default)))
  '(fci-rule-color "#4c406d")
  '(gotham-tty-256-colors t)
+ '(inhibit-startup-screen t)
  '(nrepl-message-colors
    (quote
     ("#ee11dd" "#8584ae" "#b4f5fe" "#4c406d" "#ffe000" "#ffa500" "#ffa500" "#DC8CC3")))
  '(package-selected-packages
    (quote
-    (org magit chess ace-jump-mode ace-window zone-sl cherry-blossom-theme ac-etags auto-complete comment-dwim-2 web-mode go-mode gotham-theme golint fireplace)))
+    (pbcopy vlf org magit chess ace-jump-mode ace-window zone-sl cherry-blossom-theme ac-etags auto-complete comment-dwim-2 web-mode go-mode gotham-theme golint fireplace)))
  '(vc-annotate-background "#0bafed")
  '(vc-annotate-color-map
    (quote
@@ -82,6 +83,10 @@
 (global-set-key (kbd "C-c SPC") 'ace-jump-mode)
 (global-set-key (kbd "C-x SPC") 'ace-jump-mode-pop-mark)
 (global-set-key (kbd "C-x g") 'magit-status)
+(require 'vlf-setup)
+(require 'pbcopy)
+(turn-on-pbcopy)
+
 ;; Org mode
 (global-set-key (kbd "C-c l") 'org-store-link)
 (global-set-key (kbd "C-c a") 'org-agenda)
@@ -93,7 +98,6 @@
 (global-set-key "\eQ" 'query-replace-regexp)
 (global-set-key "\^xm" 'compile) ; replace compose-mail with compile
 (delete-selection-mode)
-
 (put 'narrow-to-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
 (put 'dired-find-alternate-file 'disabled nil)
@@ -101,4 +105,8 @@
 (load-theme 'cherry-blossom t)
 (show-paren-mode)
 (require 'zone)
-;; (zone-when-idle 600)
+
+(global-set-key (kbd "C-x C-b") 'ibuffer)
+
+;; Load local init if exists.
+(load "~/.emacs.d/local" t)
