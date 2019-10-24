@@ -47,7 +47,7 @@
     ("#ee11dd" "#8584ae" "#b4f5fe" "#4c406d" "#ffe000" "#ffa500" "#ffa500" "#DC8CC3")))
  '(package-selected-packages
    (quote
-    (pbcopy vlf org magit chess ace-jump-mode ace-window zone-sl cherry-blossom-theme ac-etags auto-complete comment-dwim-2 web-mode go-mode gotham-theme golint fireplace)))
+    (ibuffer-tramp pbcopy vlf org magit chess ace-jump-mode ace-window zone-sl cherry-blossom-theme ac-etags auto-complete comment-dwim-2 web-mode go-mode gotham-theme golint fireplace)))
  '(vc-annotate-background "#0bafed")
  '(vc-annotate-color-map
    (quote
@@ -78,25 +78,42 @@
  )
 
 ;; Settings for installed packages.
-(global-set-key (kbd "M-o") 'ace-window)
-(global-set-key "\M-;" 'comment-dwim-2)
-(global-set-key (kbd "C-c SPC") 'ace-jump-mode)
-(global-set-key (kbd "C-x SPC") 'ace-jump-mode-pop-mark)
-(global-set-key (kbd "C-x g") 'magit-status)
-(require 'vlf-setup)
-(require 'pbcopy)
-(turn-on-pbcopy)
-
 ;; Org mode
 (global-set-key (kbd "C-c l") 'org-store-link)
 (global-set-key (kbd "C-c a") 'org-agenda)
 (global-set-key (kbd "C-c c") 'org-capture)
 
+;; iBuffer customizations
+(global-set-key (kbd "C-x C-b") 'ibuffer)
+(require 'ibuf-ext)
+(add-hook 'ibuffer-hook
+          (lambda ()
+            (ibuffer-tramp-set-filter-groups-by-tramp-connection)
+            (ibuffer-do-sort-by-alphabetic)))
+(add-to-list 'ibuffer-never-show-predicates "^\\*[^s]")
+(add-to-list 'ibuffer-never-show-predicates "^\\*scratch")
+
+;; Ace Window/Jump
+(global-set-key (kbd "M-o") 'ace-window)
+(global-set-key (kbd "C-c SPC") 'ace-jump-mode)
+(global-set-key (kbd "C-x SPC") 'ace-jump-mode-pop-mark)
+
+(global-set-key "\M-;" 'comment-dwim-2)
+(global-set-key (kbd "C-x g") 'magit-status)
+(require 'vlf-setup)
+(require 'pbcopy)
+(turn-on-pbcopy)
+
+;;
 ;; Custom key bindings and settings
+;;
+
 (global-set-key "\eg" 'goto-line)
 (global-set-key "\eq" 'query-replace)
 (global-set-key "\eQ" 'query-replace-regexp)
 (global-set-key "\^xm" 'compile) ; replace compose-mail with compile
+(global-set-key "\^co" 'occur)
+
 (delete-selection-mode)
 (put 'narrow-to-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
@@ -106,7 +123,16 @@
 (show-paren-mode)
 (require 'zone)
 
-(global-set-key (kbd "C-x C-b") 'ibuffer)
+;; hs-minor-mode
+(defun hs-toggle-fold ()
+  "Go to end of line before toggling hs hiding."
+  (interactive)
+  (save-excursion
+    (end-of-line)
+    (hs-toggle-hiding)))
+
+(add-hook 'prog-mode-hook 'hs-minor-mode)
+(global-set-key (kbd "C-c TAB") 'hs-toggle-fold)
 
 ;; Load local init if exists.
 (load "~/.emacs.d/local" t)
